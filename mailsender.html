@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Havi hiánybekérő</title>
+</head>
+<body>
+	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Raleway:ital,wght@1,900&family=Viga&display=swap" rel="stylesheet">
+	<style type="text/css">
+		:root{
+			--size: 200px;
+			--hsize: calc(var(--size) / 2);
+		}
+		html{
+			height: 100%;
+			width: 100%;
+		}
+		body{
+			margin: 0;
+			width: 100%;
+			height: 100%;
+
+			background: linear-gradient(130deg, #6ec8774f 0%, #6ec877f7 74%);
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		button{
+			width: var(--size);
+			height: var(--hsize);
+
+			font-size: calc(var(--size) / 4.1);
+			font-family: 'Viga', sans-serif;
+			text-shadow: 0.7px 0.7px 1px black;
+
+			font-weight: 900;
+			text-transform: uppercase;
+
+			border: 0;
+			border-radius: 17px;
+			border-start-end-radius: 50px;
+			border-end-start-radius: 50px;
+			border-start-start-radius: 4px;
+			/*border-end-end-radius: 2px;*/
+
+			background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+			color: white;
+			outline: -webkit-focus-ring-color auto 1px;
+			outline-color: #005ecc;
+
+			box-shadow: 0 0 10px #333;
+			box-shadow: 5.7px 2px 0px 6px #333;
+			box-shadow: 5.7px 4px 0 4px #333;
+
+			transition: all 0.2s cubic-bezier(0.4,-0.51, 0.26, 2.15);
+			/*transition: outline-color 1s cubic-bezier(1,0,0,1);*/
+			
+
+			transform: skew(291deg, 52deg) rotate(315deg);
+
+			cursor: pointer;
+
+			/*animation: mymove 1s infinite;*/
+			animation-timing-function: cubic-bezier(0.62, 0, 0.48, 0.98);
+		}
+
+		@keyframes mymove {
+		  0%   {outline-offset: 0px;outline-color: #005ecc;}
+		  50% {outline-offset: 4px;outline-color: #00ffa2;}
+		  100% {outline-offset: 0px;outline-color: #005ecc;}
+		}
+
+		@keyframes pontpontpont {
+		  0%   {content: ''}
+		  50% {content: '.'}
+		  75% {content: '..'}
+		  100% {content: '...'}
+		}
+
+		button:hover{
+			/*animation: mymove 1s none;*/
+		}
+
+		button:active{
+			/*outline-offset: 5px;*/
+
+			box-shadow: inset 0 0 5px #333;
+			box-shadow: 1px 1px 0px 1px #333;
+
+			outline-color: #00ffa2;
+
+			transform: skew(291deg, 52deg) rotate(315deg) translate(8px, 8px);
+			/*animation: mymove 2.5s infinite;*/
+			animation: unset;
+		}
+		.kisScreen{
+			display: none;
+
+			position: absolute;
+			top: 25px;
+			right: 70px;
+			width: 175px;
+			height: 300px;
+			filter: blur(2px);
+			background-color: #53ccc896;
+			border-radius: 20px;
+			padding: 0 10px;
+
+			box-shadow: 12px 30px 2px 11px #3c3b3b;
+			transform: skew(350deg, 348deg) rotate(16deg) translate(-269px, 102px);
+			text-shadow: 4px -4px 0px #272fc3c9;
+
+			animation: printingtesom 1s infinite;
+			animation-timing-function: cubic-bezier(0.62, 0, 0.16, 1.71);
+		}
+
+		@keyframes printingtesom {
+		  0%   {transform: skew(350deg, 348deg) rotate(16deg) translate(-269px, 102px);filter: blur(2px);}
+		  50% {transform: skew(350deg, 348deg) rotate(16deg) translate(-287px, 137px);filter: blur(4px);}
+		  100% {transform: skew(350deg, 348deg) rotate(16deg) translate(-269px, 102px);filter: blur(0px);}
+		}
+		
+
+		.kisScreen h1{
+			color: #f42413;
+		    font-family: monospace;
+		}
+
+		.kisScreen h1::after{
+			content: '...';
+			animation: pontpontpont 1.5s infinite;
+		}
+	</style>
+	<div class="kisScreen">
+		<h1>Email loading</h1>
+	</div>
+	<button onmousedown="hangotadok()" onmouseup="console.log('elküldtem.php')">Küldd</button>
+	<script type="text/javascript">
+		var audioElement = new Audio('man.wav');
+		function hangotadok(){
+			audioElement.play();
+			console.log('szius');
+		}
+	</script>
+</body>
+</html>
